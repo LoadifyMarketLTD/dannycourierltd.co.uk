@@ -5,32 +5,32 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#2563eb',
+  themeColor: '#0A2239',
 }
 
 export const metadata: Metadata = {
   title: {
-    default: 'Danny Courier LTD - Professional Courier and Logistics Services',
-    template: '%s | Danny Courier LTD',
+    default: 'XDrive Logistics Ltd - Reliable Same Day & Express Transport',
+    template: '%s | XDrive Logistics Ltd',
   },
-  description: 'Reliable courier and logistics services in the UK. Fast, secure deliveries for businesses and individuals. Professional transport solutions you can trust.',
-  keywords: ['courier', 'logistics', 'delivery', 'transport', 'UK courier', 'parcel delivery', 'express delivery', 'same day delivery'],
-  authors: [{ name: 'Danny Courier LTD' }],
-  creator: 'Danny Courier LTD',
-  publisher: 'Danny Courier LTD',
+  description: 'Fast, Secure & On-Time Deliveries 24/7 across the UK & Europe. Same day and express transport services. Fully insured and trusted by Courier Exchange.',
+  keywords: ['courier', 'logistics', 'delivery', 'transport', 'UK courier', 'Europe delivery', 'same day delivery', 'express transport', 'XDrive Logistics'],
+  authors: [{ name: 'XDrive Logistics Ltd' }],
+  creator: 'XDrive Logistics Ltd',
+  publisher: 'XDrive Logistics Ltd',
   metadataBase: new URL('https://dannycourierltd.co.uk'),
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: 'https://dannycourierltd.co.uk',
-    title: 'Danny Courier LTD - Professional Courier and Logistics Services',
-    description: 'Reliable courier and logistics services in the UK. Fast, secure deliveries for businesses and individuals.',
-    siteName: 'Danny Courier LTD',
+    title: 'XDrive Logistics Ltd - Reliable Same Day & Express Transport',
+    description: 'Fast, Secure & On-Time Deliveries 24/7 across the UK & Europe.',
+    siteName: 'XDrive Logistics Ltd',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Danny Courier LTD - Professional Courier and Logistics Services',
-    description: 'Reliable courier and logistics services in the UK. Fast, secure deliveries for businesses and individuals.',
+    title: 'XDrive Logistics Ltd - Reliable Same Day & Express Transport',
+    description: 'Fast, Secure & On-Time Deliveries 24/7 across the UK & Europe.',
   },
   robots: {
     index: true,
@@ -52,6 +52,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      </head>
       <body>{children}</body>
     </html>
   )
