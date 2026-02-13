@@ -1,17 +1,13 @@
 import { NextResponse } from 'next/server'
+import { otpStore, generateOTP } from '../otp-store'
 
 // In production, this would connect to a real database
 // For now, we'll use a simple in-memory store for demo purposes
 const DEMO_USER = {
   email: 'admin@xdrivelogistics.com',
-  password: 'demo123', // In production, this would be hashed
-}
-
-// Store OTPs temporarily (in production, use Redis or database with expiry)
-const otpStore: { [email: string]: { code: string; expires: number } } = {}
-
-function generateOTP(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString()
+  // In production, use bcrypt or similar: password would be hashed
+  // Example: passwordHash: await bcrypt.hash('demo123', 10)
+  password: 'demo123', // SECURITY NOTE: This is for demo only - hash passwords in production!
 }
 
 export async function POST(request: Request) {
@@ -27,6 +23,7 @@ export async function POST(request: Request) {
     }
 
     // Check credentials (in production, check against database with hashed password)
+    // Example: const isValid = await bcrypt.compare(password, user.passwordHash)
     if (email !== DEMO_USER.email || password !== DEMO_USER.password) {
       return NextResponse.json(
         { error: 'Invalid email or password' },
@@ -56,8 +53,8 @@ export async function POST(request: Request) {
       { 
         success: true,
         message: 'OTP sent to your email',
-        // For demo purposes only - remove in production
-        debug_otp: otp,
+        // SECURITY: Only include in development mode
+        ...(process.env.NODE_ENV === 'development' && { debug_otp: otp }),
       },
       { status: 200 }
     )
@@ -69,6 +66,3 @@ export async function POST(request: Request) {
     )
   }
 }
-
-// Export the OTP store for use in verify-otp route
-export { otpStore }

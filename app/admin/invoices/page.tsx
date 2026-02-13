@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { isTokenExpired } from '../../lib/auth-utils'
 import styles from './invoices.module.css'
 
 export default function InvoicesPage() {
@@ -11,7 +12,8 @@ export default function InvoicesPage() {
 
   useEffect(() => {
     const token = localStorage.getItem('auth_token')
-    if (!token) {
+    if (!token || isTokenExpired(token)) {
+      localStorage.removeItem('auth_token')
       router.push('/login')
     } else {
       setIsAuthenticated(true)

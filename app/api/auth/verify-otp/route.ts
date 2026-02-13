@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server'
 import { SignJWT } from 'jose'
-
-// Simple in-memory OTP store (shared from login route)
-// In production, use Redis or database
-const otpStore: { [email: string]: { code: string; expires: number } } = {}
+import { otpStore } from '../otp-store'
 
 // JWT secret - in production, use environment variable
 const JWT_SECRET = new TextEncoder().encode(

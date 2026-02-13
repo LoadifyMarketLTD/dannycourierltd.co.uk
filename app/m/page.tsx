@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { isTokenExpired } from '../lib/auth-utils'
 import styles from './m.module.css'
 
 export default function MobileOpsPage() {
@@ -10,7 +11,8 @@ export default function MobileOpsPage() {
 
   useEffect(() => {
     const token = localStorage.getItem('auth_token')
-    if (!token) {
+    if (!token || isTokenExpired(token)) {
+      localStorage.removeItem('auth_token')
       router.push('/login')
     } else {
       setIsAuthenticated(true)
