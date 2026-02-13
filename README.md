@@ -229,7 +229,7 @@ All pull requests create deploy previews automatically.
 
 ## License
 
-© 2026 XDrive Logistics Ltd. All rights reserved.
+© 2026 Danny Courier Ltd. All rights reserved.
 
 ## Established
 
