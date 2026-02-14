@@ -1,17 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* CSS Reset and Base Styles - XDrive Logistics Premium Dark Theme */
 :root {
   /* Brand Colors (EXACT SPEC) */
-  --color-primary-navy-dark: #0A2239;
-  --color-primary-navy: #1F3A5F;
-  --color-secondary-blue: #2F6FB3;
-  --color-gold-primary: #D4AF37;
-  --color-gold-dark: #B8941F;
-  --color-green-primary: #1F7A3D;
+  --color-primary-navy-dark: #0a1628;
+  --color-primary-navy-light: #1a2332;
+  --color-gold-primary: #d4a574;
+  --color-gold-dark: #c9984f;
+  --color-blue-accent: #4a9eff;
   --color-green-whatsapp: #25D366;
-  --color-bg-light: #F4F7FA;
   --color-text-white: #FFFFFF;
   --color-text-white-transparent: rgba(255,255,255,0.85);
-  --color-text-dark: #0A2239;
   
   /* Typography (Inter font) */
   --font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
