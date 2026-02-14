@@ -64,11 +64,11 @@ export default function CTASection() {
           </a>
           
           <a
-            href="mailto:xdrvielogisticoltd@gmail.com"
+            href="mailto:xdrivelogisticltd@gmail.com"
             className="flex items-center gap-3 hover:text-gold transition-colors"
           >
             <Mail size={24} />
-            <span className="text-lg">xdrvielogisticoltd@gmail.com</span>
+            <span className="text-lg">xdrivelogisticltd@gmail.com</span>
           </a>
         </motion.div>
       </div>

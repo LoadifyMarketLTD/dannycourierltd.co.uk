@@ -65,7 +65,7 @@ export default function Footer() {
 
         {/* Bottom - Copyright */}
         <div className="pt-8 border-t border-white/10 text-center text-white/60 text-sm">
-          <p>© 2025 SomeLightfalls. All rights reserved. Privacy Policy</p>
+          <p>© 2025 XDrive Logistics Ltd. All rights reserved. <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a></p>
         </div>
       </div>
     </footer>
