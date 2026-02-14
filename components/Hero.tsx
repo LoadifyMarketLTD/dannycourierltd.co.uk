@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
   const WHATSAPP_URL = 'https://wa.me/447423272138?text=Hello,%20I%20would%20like%20to%20request%20a%20quote';
@@ -61,41 +62,56 @@ export default function Hero() {
             className="relative h-[400px] md:h-[600px]"
           >
             {/* Background Highway Image */}
-            <div className="absolute inset-0 opacity-30">
-              <img
+            <div className="absolute inset-0 opacity-20 blur-sm">
+              <Image
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80"
                 alt="Highway background"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority
+                unoptimized
               />
             </div>
 
-            {/* Real Luton Van Image */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Real Luton Van Image with fallback background */}
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-navy-light/50 to-navy-dark/80">
               <div className="relative w-full h-full max-w-3xl">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1000&q=80"
-                  alt="White Luton Van"
-                  className="w-full h-full object-contain"
+                  alt="White Luton Van - Professional Transport"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  priority
+                  unoptimized
                 />
                 
-                {/* Text Overlay for Branding on Van */}
+                {/* Text Overlay for Company Branding - MAIN FOCUS */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/95 backdrop-blur-sm px-8 py-6 rounded-lg shadow-2xl border-4 border-blue-accent">
+                  <div className="bg-white/98 backdrop-blur-md px-10 py-8 rounded-xl shadow-2xl border-4 border-blue-accent transform hover:scale-105 transition-all duration-300">
                     <div className="text-center">
-                      <div className="text-5xl font-extrabold mb-2">
-                        <span className="text-blue-accent">X</span>
+                      <div className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-3">
+                        <span className="text-blue-accent drop-shadow-lg">X</span>
                         <span className="text-navy-dark">DRIVE</span>
                       </div>
-                      <div className="text-2xl font-bold text-gold mb-2">LOGISTICS</div>
-                      <div className="text-lg font-semibold text-navy-dark">07423 272 138</div>
+                      <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-gold mb-3 tracking-wider">LOGISTICS</div>
+                      <div className="text-xl md:text-2xl font-bold text-navy-dark border-t-2 border-gold pt-3 mt-2">
+                        📞 07423 272 138
+                      </div>
+                      <div className="text-sm md:text-base text-navy-dark/70 mt-2 font-medium">
+                        Professional Transport Services
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-transparent to-transparent"/>
+            {/* Gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/80 via-transparent to-transparent pointer-events-none"/>
+            
+            {/* Decorative elements */}
+            <div className="absolute top-10 right-10 w-32 h-32 bg-gold/20 rounded-full blur-3xl"/>
+            <div className="absolute bottom-10 left-10 w-40 h-40 bg-blue-accent/20 rounded-full blur-3xl"/>
           </motion.div>
         </div>
       </div>
